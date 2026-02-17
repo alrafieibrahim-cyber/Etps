@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://alrafieibrahim-cyber.github.io/Etps/">
     <meta property="og:title" content="مؤسسة فيصل للمواد الخصوصية | 35 سنة خبرة في العزل والصيانة">
     <meta property="og:description" content="شركة أردنية رائدة في أعمال العزل المائي والحراري وعزل الحريق. خدماتنا في جميع محافظات المملكة الأردنية الهاشمية.">
-    <meta property="og:image" content="https://alrafieibrahim-cyber.github.io/Etps/og-image.jpg">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
     <meta property="business:contact_data:locality" content="عمان">
     <meta property="business:contact_data:country_name" content="الأردن">
     <meta property="business:contact_data:phone_number" content="+962795685391">
@@ -26,7 +26,7 @@
     <meta property="twitter:url" content="https://alrafieibrahim-cyber.github.io/Etps/">
     <meta property="twitter:title" content="مؤسسة فيصل للمواد الخصوصية | 35 سنة خبرة">
     <meta property="twitter:description" content="أعمال العزل والصيانة في الأردن - عزل مائي، حراري، حريق">
-    <meta property="twitter:image" content="https://alrafieibrahim-cyber.github.io/Etps/og-image.jpg">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://alrafieibrahim-cyber.github.io/Etps/">
@@ -88,7 +88,6 @@
             "@type": "Country",
             "name": "الأردن"
         },
-        "hasMap": "https://goo.gl/maps/example",
         "sameAs": [
             "https://wa.me/962795685391",
             "https://wa.me/962776341215"
@@ -344,7 +343,7 @@
         /* Hero Section */
         .hero {
             min-height: 90vh;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%), 
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%), 
                         url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             display: flex;
             align-items: center;
@@ -386,18 +385,63 @@
             align-items: center;
         }
 
-        .hero-logo-img {
-            max-width: 100%;
-            height: auto;
+        .hero-logo-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 3/4;
+            background: white;
             border-radius: 20px;
+            padding: 20px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.4);
-            border: 5px solid rgba(255,255,255,0.2);
+            border: 5px solid rgba(255,255,255,0.3);
             animation: float 6s ease-in-out infinite;
+            overflow: hidden;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .hero-logo-fallback {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-logo-fallback .big-f {
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-logo-fallback .company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-logo-fallback .company-sub {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         .jordan-badge-hero {
@@ -1175,7 +1219,7 @@
                 margin-top: 2rem;
             }
 
-            .hero-logo-img {
+            .hero-logo-container {
                 max-width: 300px;
             }
 
@@ -1255,7 +1299,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: white;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
             z-index: 9999;
             display: flex;
             align-items: center;
@@ -1270,52 +1314,52 @@
 
         .loader-content {
             text-align: center;
+            color: white;
         }
 
-        .loader-logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 1rem;
+        .loader-logo-fallback {
+            width: 150px;
+            height: 200px;
+            background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             animation: pulse-logo 2s infinite;
+            color: var(--primary);
         }
 
         @keyframes pulse-logo {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            0%, 100% { transform: scale(1); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+        }
+
+        .loader-logo-fallback .big-f {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .loader-logo-fallback .company-name-small {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 0 10px;
         }
 
         .loader-text {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .loader-text span {
-            color: var(--secondary);
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            background: #f1f5f9;
-            padding: 1rem 2rem;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .breadcrumb span {
-            color: var(--gray);
-            margin: 0 0.5rem;
+        .loader-subtext {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         /* Skip to content for accessibility */
@@ -1342,9 +1386,12 @@
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-content">
-            <img src="/mnt/kimi/upload/FB_IMG_1768305631150.jpg" alt="مؤسسة فيصل للمواد الخصوصية" class="loader-logo">
-            <div class="loader-text">مؤسسة <span>فيصل</span></div>
-            <div style="margin-top: 0.5rem; font-size: 1rem; color: var(--gray);">35 سنة من الخبرة في الأردن</div>
+            <div class="loader-logo-fallback">
+                <div class="big-f">F</div>
+                <div class="company-name-small">مؤسسة فيصل<br>للمواد الخصوصية</div>
+            </div>
+            <div class="loader-text">مؤسسة <span style="color: var(--accent);">فيصل</span></div>
+            <div class="loader-subtext">35 سنة من الخبرة في الأردن 🇯🇴</div>
         </div>
     </div>
 
@@ -1442,7 +1489,17 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/mnt/kimi/upload/FB_IMG_1768305631150.jpg" alt="مؤسسة فيصل للمواد الخصوصية - أعمال العزل في الأردن" class="hero-logo-img">
+                    <div class="hero-logo-container">
+                        <img src="https://i.ibb.co/20G1Vx7/faisal-logo.jpg" 
+                             alt="مؤسسة فيصل للمواد الخصوصية - أعمال العزل في الأردن" 
+                             class="hero-logo-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-logo-fallback">
+                            <div class="big-f">F</div>
+                            <div class="company-name">مؤسسة فيصل</div>
+                            <div class="company-sub">للمواد الخصوصية</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1874,70 +1931,4 @@
                 'karak': 'الكرك',
                 'tafilah': 'الطفيلة',
                 'maan': 'معان',
-                'mafraq': 'المفرق'
-            };
-            
-            const whatsappMessage = `طلب عرض سعر جديد من الموقع:
-            
-الاسم: ${name}
-الهاتف: ${phone}
-الخدمة: ${serviceNames[service] || service}
-الموقع: ${locationNames[location] || location}
-التفاصيل: ${message || 'لا يوجد'}`;
-
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح!';
-                btn.style.background = '#10b981';
-                
-                setTimeout(() => {
-                    window.open(`https://wa.me/962795685391?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
-                    
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.disabled = false;
-                        btn.style.background = '';
-                        e.target.reset();
-                    }, 1000);
-                }, 500);
-            }, 1500);
-        }
-
-        // Smooth Scroll for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    const navLinks = document.querySelector('.nav-links');
-                    if (window.innerWidth <= 968) {
-                        navLinks.style.display = 'none';
-                    }
-                }
-            });
-        });
-
-        // Header Scroll Effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Close mobile menu on resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 968) {
-                const
-
+                'mafraq': 'المفر
